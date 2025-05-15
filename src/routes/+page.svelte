@@ -4,7 +4,7 @@
 	import soccer from '$lib/images/soxxoe.jpg'
 	import gym from '$lib/images/d.jpg'
 	const sportsNames = [
-		{sportName: 'tennis', image: tennis, description: 'the tennis court that takes up half of the school grounds'},
+		{sportName: 'tennis', image: tennis, description: 'the tennis court in the middle of the school grounds'},
 		{sportName: 'soccer', image: soccer, description: 'the soccer (football) field with a net over it'},
 		{sportName: 'gym', image: gym, description: 'the entire gym'}
 	]
@@ -13,33 +13,16 @@
 </script>
 
 <svelte:head>
-	<title>WLSA reservation</title>
+	<title>WLSA sport reservations</title>
 </svelte:head>
 
-<section>
+<section class="flex flex-col">
+	<h1 class="text-2xl font-extrabold m-5">Reserve a sports facility</h1>
 	<div>
-		<ul>
+		<ul class="flex flex-col justify-start">
 			{#each sportsNames as {sportName, image, description} }
-				<li>
-					<Reservation {sportName} {image} {description}/> 
-				</li>
-				
+				<Reservation {sportName} {image} {description}/> 
 			{/each}
 		</ul>
-
-
 	</div>
-
 </section>
-
-<style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
-
-
-</style>

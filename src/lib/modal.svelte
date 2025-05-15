@@ -16,7 +16,6 @@
     let id = $state('')
 
     let error = $state(false)
-    let entered = $state(false)
 
 
     const sucessOpen = writable(false)
@@ -26,7 +25,6 @@
 
 
     function convertToDate(date:string, time:string){
-        console.log('it works until here')
         date = `2025-${date} ${time}:00`        
         
         function isDateValid(dt: string) {
@@ -54,7 +52,6 @@
         timeframeEnd = convertToDate(date, endingTime)
         
         error = (!timeframeStart || !timeframeEnd) ? true : false;
-        console.log(error)
 
                  
         if (!error){
@@ -85,38 +82,38 @@
     }
 </script>
 
-<button onclick={buttonClick}  class="btn">Add Reservation</button>
+<button onclick={buttonClick}  class="btn border-2 rounded p-1.5 text-red-900 font-bold text-xl">Add Reservation</button>
 
 
-<dialog id="Modele" class="modal p-10 m-20 object-center object-none w-300 h-150 flex flex-col {hidden}" >
-    <div class="modal-box ">
-        <h3 class="font-extrabold black text-xl">
-            add your thing here
+
+<dialog id="Modele" class="modal p-10 m-20 w-300 h-150 flex flex-col {hidden} rounded-2xl" >
+    <div class="modal-box flex justify-between flex-row mb-8">
+        <h3 class="font-bold black text-3xl">
+            Make a reservation
         </h3>
-        <button class="btn">
-            x
+        <button aria-label="close-button" class="btn p-2 rounded-full cursor-pointer hover:bg-gray-200" onclick={() => alert('the button is a lie')}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-testid="svg-icon"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M18 6l-12 12"></path><path d="M6 6l12 12"></path></svg>
         </button>
     </div>
     <div class="modal-action">
-        <form method="dialog" class="flex flex-col p-5 m-5" onsubmit={makeReservation}>
-            <div class='p-3'>
-                <label for="name" class="font-bold text-lg">Your Name:</label>
+        <form method="dialog" class="flex flex-col" onsubmit={makeReservation}>
+            <div class='pb-3'>
+                <label for="name" class="text-lg">Your Name:</label>
                 <input bind:value={name} type="text" id="name" class="ml-5" placeholder="Zero Two">
             </div>
-            <div class='p-3'>
-                <label for="date" class="font-bold text-lg">Enter date:</label>
+            <div class='pb-3'>
+                <label for="date" class=" text-lg">Enter date:</label>
                 <input bind:value={date} type="text" id="date" placeholder="MM-DD" class="ml-5">
             </div>
-            <div class='p-3'>
-                <label for="starting" class="font-bold text-lg">Enter starting time:</label>
+            <div class='pb-3'>
+                <label for="starting" class="text-lg">Enter starting time:</label>
                 <input bind:value={startingTime} type="text" id="starting" placeholder="hr:m" class="ml-5">
             </div>
-            <div class='p-3'>   
-                <label for="date" class="font-bold text-lg">Enter ending time:</label>
+            <div class='pb-3'>   
+                <label for="date" class="text-lg">Enter ending time:</label>
                 <input bind:value={endingTime} type="text" id="ending" placeholder="hr:m" class="ml-5">
             </div>
-
-            <button type="submit" class="btn btn-primary border">Submit</button>
+            <button type="submit" class="btn btn-primary border-2 rounded-full p-2 mt-5 hover:border-green-800 hover:text-green-800 cursor-pointer">Submit</button>
         </form>
     </div>
 </dialog>

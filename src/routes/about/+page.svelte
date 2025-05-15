@@ -7,20 +7,15 @@
 	<h1>About this app</h1>
 
 	<p>
-		This is a <a href="https://svelte.dev/docs/kit">SvelteKit</a> app. You can make your own by typing
-		the following into your command line and following the prompts:
+		This app is a prototype of a potential sports reservation website. The goal of this website is to solve the current issues
+		with the availability of sports facilities at WLSA. There are still multiple bugs and things might not work as intended.
+		Anyone who has knowledge in web development can visit the Github to see the open-souced code and make edits if necessary. Created
+		with <a href="https://svelte.dev/">Sveltekit</a> and <a href="http://firebase.google.com/">Firebase</a>.
+	</p>
+	<br />
+	<br />
+	<p class="mt-5 font-bold">
+		Made by G10 Zach Zhang SDP 3 
 	</p>
 
-	<pre>npx sv create</pre>
-
-	<p>
-		The page you're looking at is purely static HTML, with no client-side interactivity needed.
-		Because of that, we don't need to load any JavaScript. Try viewing the page's source, or opening
-		the devtools network panel and reloading.
-	</p>
-
-	<p>
-		The <a href="/sverdle">Sverdle</a> page illustrates SvelteKit's data loading and form handling. Try
-		using it with JavaScript disabled!
-	</p>
 </div>
